@@ -4,8 +4,11 @@ import axios from "axios";
 
 export const MOCK_DATA = [
   {
-    imageAlt: "Image of a happy Golden Retriever",
-    imageSrc: "../golden_retriever",
+    imageAlt: "Image of a sink",
+    imageSrc:
+      "https://thewindyside.com/wp-content/uploads/2017/02/img_4629.jpg",
+    message: "sink is broken, but still works",
+    rating: "2/5",
     postId: "1",
     userId: "1",
     userName: "Leila",
@@ -22,8 +25,7 @@ function Dashboard() {
     axios
       .get(url)
       .then(function (response) {
-        console.log({ response });
-        //setPost(response.data);
+        setPost(response.data);
       })
       .catch(function (error) {
         // handle error
@@ -34,9 +36,7 @@ function Dashboard() {
   return (
     <div className="PageWrapper">
       <h1>Dashboard</h1>
-      {MOCK_DATA.map((post, i) => (
-        <PostCard post={post} key={i} />
-      ))}
+      {post && post.map((post, i) => <PostCard post={post} key={i} />)}
     </div>
   );
 }

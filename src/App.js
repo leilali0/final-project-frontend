@@ -94,7 +94,13 @@ function App() {
           {/* ADD POST */}
           <Route
             path="/add-post"
-            element={loggedIn ? <AddPost /> : <Navigate to="/login" />}
+            element={
+              loggedIn ? (
+                <AddPost userInformation={userInformation} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
           />
           {/* DASHBOARD */}
           <Route
