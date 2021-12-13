@@ -8,7 +8,6 @@ const baseUrl = "http://localhost:4000/";
 function AddPost({ userInformation }) {
   const navigate = useNavigate();
 
-  console.log(userInformation);
   function submitPost(e) {
     e.preventDefault();
 
@@ -20,13 +19,10 @@ function AddPost({ userInformation }) {
     const userName = userInformation.displayName;
     const userID = userInformation.uid;
 
-    console.log(userName, userID);
-
     const url = `${baseUrl}create?message=${message}&imageSrc=${imageSrc}&imageAlt=${imageAlt}&rating=${rating}&userName=${userName}&location=${location}&userID=${userID}`;
     axios
       .get(url)
       .then(function (response) {
-        console.log({ response });
         navigate("/", { replace: true });
       })
       .catch(function (error) {

@@ -27,7 +27,6 @@ function CreateUser({ setLoggedIn, setUserInformation }) {
             uid: user.uid,
             accessToken: user.accessToken,
           });
-          console.log(displayName);
           updateProfile(auth.currentUser, {
             displayName,
           })
