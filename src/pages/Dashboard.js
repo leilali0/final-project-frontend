@@ -20,6 +20,8 @@ const url = `http://localhost:4000`;
 function Dashboard() {
   const [post, setPost] = useState();
 
+  console.log({ post });
+
   // Getting all posts
   useEffect(() => {
     axios

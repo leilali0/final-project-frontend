@@ -84,7 +84,16 @@ function App() {
           {/* CREATE USER */}
           <Route
             path="/create-user"
-            element={!loggedIn ? <CreateUser /> : <Navigate to="/" />}
+            element={
+              !loggedIn ? (
+                <CreateUser
+                  setLoggedIn={setLoggedIn}
+                  setUserInformation={setUserInformation}
+                />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
           />
           {/* LOGIN */}
           <Route

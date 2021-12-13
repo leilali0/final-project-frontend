@@ -1,8 +1,8 @@
 import React from "react";
-import { usePrames } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Post() {
-  let { id } = usePrames();
+  let { id } = useParams();
 
   return (
     <div class="PageWrapper">
