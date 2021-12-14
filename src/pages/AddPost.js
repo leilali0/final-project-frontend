@@ -33,8 +33,10 @@ function AddPost({ userInformation }) {
 
   return (
     <div className="PageWrapper">
-      <h1>Add Post</h1>
-      <AddPostForm submitPost={submitPost} />
+      <div className="formWrapper">
+        <h1>New Post</h1>
+        <AddPostForm submitPost={submitPost} />
+      </div>
     </div>
   );
 }

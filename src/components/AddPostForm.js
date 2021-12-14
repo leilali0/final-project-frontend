@@ -3,7 +3,6 @@ import React from "react";
 function AddPostForm({ submitPost }) {
   return (
     <div className="Form">
-      <h2>Add Post Form</h2>
       <form onSubmit={(e) => submitPost(e)}>
         <label htmlFor="message">Message</label>
         <input type="text" name="message" placeholder="Enter Message" />
@@ -18,13 +17,15 @@ function AddPostForm({ submitPost }) {
         <label htmlFor="imageAlt">Image Alt</label>
         <input type="text" name="imageAlt" placeholder="Describe Image" />
 
-        <label htmlFor="rating">Image Scource</label>
-        <input type="text" name="rating" placeholder="5/5" />
+        <label htmlFor="rating">Rating (out of 5)</label>
+        <input type="number" name="rating" placeholder="5/5" min="0" max="5" />
 
-        <label htmlFor="location">Image Scource</label>
+        <label htmlFor="location">Location</label>
         <input type="text" name="location" placeholder="Enter Location" />
 
-        <button type="submit">Create Post</button>
+        <button className="submitButton" type="submit">
+          Create Post
+        </button>
       </form>
     </div>
   );

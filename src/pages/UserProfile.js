@@ -2,34 +2,41 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import PostCard from "../components/PostCard";
+import { MOCK_DATA } from "./Dashboard";
 
 const url = `http://localhost:4000`;
 
-function UserProfile({ userInformation }) {
-  // DISPLAY ALL POSTS BY ONE USER
-
+function UserProfile() {
   const [userPosts, setUserPosts] = useState();
-  let { uid } = useParams();
+  let { userID } = useParams();
 
   useEffect(() => {
     axios
-      .get(url)
+      .get(`${url}/user/${userID}`)
       .then(function (response) {
-        console.log({ response });
         setUserPosts(response.data);
       })
       .catch(function (error) {
         // handle error
         console.warn(error);
       });
-  }, []);
+  }, [userID]);
 
   return (
     <div className="PageWrapper">
-      <h1>User Name:</h1>
-      <h2>Posts</h2>
-      {userPosts &&
-        userPosts.map((userPosts, i) => <PostCard post={userPosts} key={i} />)}
+      <h1 className="userName">
+        {userPosts && userPosts[0].userName}'s Profile
+      </h1>
+      <div className="postGrid">
+        {userPosts &&
+          userPosts.map((userPosts, i) => (
+            <PostCard post={userPosts} key={i} />
+          ))}
+        {/* For Style Demonstration Purposes */}
+        {MOCK_DATA.map((userPosts, i) => (
+          <PostCard post={userPosts} key={i} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -67,20 +67,13 @@ function App() {
 
   return (
     <div>
-      <Header logout={logout} loggedIn={loggedIn} />
+      <Header
+        logout={logout}
+        loggedIn={loggedIn}
+        userInformation={userInformation}
+      />
       <Router>
         <Routes>
-          {/* USER PROFILE */}
-          <Route
-            path="/user/:id"
-            element={
-              loggedIn ? (
-                <UserProfile userInformation={userInformation} />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
           {/* CREATE USER */}
           <Route
             path="/create-user"
@@ -120,6 +113,11 @@ function App() {
           <Route
             path="/post/:id"
             element={loggedIn ? <Post /> : <Navigate to="/login" />}
+          />
+          {/* USER PROFILE */}
+          <Route
+            path="/user/:userID"
+            element={loggedIn ? <UserProfile /> : <Navigate to="/login" />}
           />
         </Routes>
       </Router>

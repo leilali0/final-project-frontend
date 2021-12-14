@@ -13,7 +13,9 @@ function CreateUserForm({ signUpUser }) {
         <label htmlFor="password">Password</label>
         <input type="password" name="password" placeholder="Enter Password" />
 
-        <button type="submit">Create User</button>
+        <button className="submitButton" type="submit">
+          Create User
+        </button>
       </form>
     </div>
   );

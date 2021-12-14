@@ -9,9 +9,10 @@ export const MOCK_DATA = [
       "https://thewindyside.com/wp-content/uploads/2017/02/img_4629.jpg",
     message: "sink is broken, but still works",
     rating: "2/5",
-    postId: "1",
+    postId: "mockdata",
     userId: "1",
     userName: "Leila",
+    location: "Central Park, New York, NY 11206",
   },
 ];
 
@@ -35,8 +36,10 @@ function Dashboard() {
 
   return (
     <div className="PageWrapper">
-      <h1>Dashboard</h1>
-      {post && post.map((post, i) => <PostCard post={post} key={i} />)}
+      <h1 className="title">Dashboard</h1>
+      <div className="postGrid">
+        {post && post.map((post, i) => <PostCard post={post} key={i} />)}
+      </div>
     </div>
   );
 }

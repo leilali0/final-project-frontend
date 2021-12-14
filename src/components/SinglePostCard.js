@@ -1,8 +1,8 @@
 import React from "react";
 
-function PostCard({ post }) {
+function SinglePostCard({ post }) {
   return (
-    <div className="PostCard">
+    <div className="SinglePostCard">
       <img className="image" src={post.imageSrc} alt={post.imageAlt} />
 
       <p className="location">{post.location}</p>
@@ -12,12 +12,9 @@ function PostCard({ post }) {
         <p>
           Poster by: <a href={`/user/${post.userID}`}>{post.userName}</a>
         </p>
-        <p>
-          <a href={`/post/${post.id}`}>View Post</a>
-        </p>
       </div>
     </div>
   );
 }
 
-export default PostCard;
+export default SinglePostCard;
