@@ -8,7 +8,6 @@ const url = process.env.REACT_APP_BACKEND_URL || `http://localhost:4000`;
 function UserProfile() {
   const [userPosts, setUserPosts] = useState();
   let { userID } = useParams();
-  const userName = "";
 
   useEffect(() => {
     axios
