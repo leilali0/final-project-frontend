@@ -3,7 +3,7 @@ import AddPostForm from "../components/AddPostForm";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const baseUrl = "http://localhost:4000/";
+const baseUrl = process.env.REACT_APP_BACKEND_URL || `http://localhost:4000`;
 
 function AddPost({ userInformation }) {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ function AddPost({ userInformation }) {
     const userName = userInformation.displayName;
     const userID = userInformation.uid;
 
-    const url = `${baseUrl}create?message=${message}&imageSrc=${imageSrc}&imageAlt=${imageAlt}&rating=${rating}&userName=${userName}&location=${location}&userID=${userID}`;
+    const url = `${baseUrl}/create?message=${message}&imageSrc=${imageSrc}&imageAlt=${imageAlt}&rating=${rating}&userName=${userName}&location=${location}&userID=${userID}`;
     axios
       .get(url)
       .then(function (response) {

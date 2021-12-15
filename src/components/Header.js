@@ -8,8 +8,12 @@ function Header({ logout, loggedIn, userInformation }) {
         <nav>
           {!loggedIn && (
             <>
-              <a href="/login">Login</a>
-              <a href="/create-user">Create User</a>
+              <a className="link" href="/login">
+                Login
+              </a>
+              <a className="link" href="/create-user">
+                Create User
+              </a>
             </>
           )}
           {loggedIn && (

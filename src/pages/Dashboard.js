@@ -2,21 +2,7 @@ import React, { useEffect, useState } from "react";
 import PostCard from "../components/PostCard";
 import axios from "axios";
 
-export const MOCK_DATA = [
-  {
-    imageAlt: "Image of a sink",
-    imageSrc:
-      "https://thewindyside.com/wp-content/uploads/2017/02/img_4629.jpg",
-    message: "sink is broken, but still works",
-    rating: "2/5",
-    postId: "mockdata",
-    userId: "1",
-    userName: "Leila",
-    location: "Central Park, New York, NY 11206",
-  },
-];
-
-const url = `http://localhost:4000`;
+//const url = process.env.REACT_APP_BACKEND_URL || `http://localhost:4000`;
 
 function Dashboard() {
   const [post, setPost] = useState();
@@ -24,7 +10,7 @@ function Dashboard() {
   // Getting all posts
   useEffect(() => {
     axios
-      .get(url)
+      .get(`https://glacial-woodland-33490.herokuapp.com`)
       .then(function (response) {
         setPost(response.data);
       })

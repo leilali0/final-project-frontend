@@ -121,9 +121,6 @@ function App() {
           />
         </Routes>
       </Router>
-      <footer className="footer">
-        <p>@Leila2021</p>
-      </footer>
     </div>
   );
 }
