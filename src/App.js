@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   Navigate,
-  HashRouter as Router,
+  BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
