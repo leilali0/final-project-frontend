@@ -19,7 +19,7 @@ function AddPost({ userInformation }) {
     const userName = userInformation.displayName;
     const userID = userInformation.uid;
 
-    const url = `${baseUrl}/create?message=${message}&imageSrc=${imageSrc}&imageAlt=${imageAlt}&rating=${rating}&userName=${userName}&location=${location}&userID=${userID}`;
+    const url = `https://glacial-woodland-33490.herokuapp.com/create?message=${message}&imageSrc=${imageSrc}&imageAlt=${imageAlt}&rating=${rating}&userName=${userName}&location=${location}&userID=${userID}`;
     axios
       .get(url)
       .then(function (response) {

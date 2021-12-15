@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import PostCard from "../components/PostCard";
 import axios from "axios";
 
-//const url = process.env.REACT_APP_BACKEND_URL || `http://localhost:4000`;
-
 function Dashboard() {
   const [post, setPost] = useState();
 

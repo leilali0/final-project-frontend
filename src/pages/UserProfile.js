@@ -11,7 +11,7 @@ function UserProfile() {
 
   useEffect(() => {
     axios
-      .get(`${url}/user/${userID}`)
+      .get(`https://glacial-woodland-33490.herokuapp.com/post/user/${userID}`)
       .then(function (response) {
         setUserPosts(response.data);
       })

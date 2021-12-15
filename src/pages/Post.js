@@ -11,7 +11,7 @@ function Post() {
 
   useEffect(() => {
     axios
-      .get(`${url}/post/${id}`)
+      .get(`https://glacial-woodland-33490.herokuapp.com/post/${id}`)
       .then(function (response) {
         setSinglePost(response.data);
       })
