@@ -91,7 +91,16 @@ function App() {
           {/* LOGIN */}
           <Route
             path="/login"
-            element={!loggedIn ? <Login /> : <Navigate to="/" />}
+            element={
+              !loggedIn ? (
+                <Login
+                  setLoggedIn={setLoggedIn}
+                  setUserInformation={setUserInformation}
+                />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
           />
           {/* ADD POST */}
           <Route
