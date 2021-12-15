@@ -23,6 +23,7 @@ function UserProfile() {
 
   return (
     <div className="PageWrapper">
+      <h1 className="title">User Profile</h1>
       <div className="postGrid">
         {userPosts &&
           userPosts.map((userPosts, i) => (
