@@ -23,9 +23,6 @@ function UserProfile() {
 
   return (
     <div className="PageWrapper">
-      {/* <h1 className="userName">
-        {userPosts && userPosts[0].userName}'s Profile
-      </h1> */}
       <div className="postGrid">
         {userPosts &&
           userPosts.map((userPosts, i) => (
