@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import PostCard from "../components/PostCard";
 
-const url = process.env.REACT_APP_BACKEND_URL || `http://localhost:4000`;
+//const url = process.env.REACT_APP_BACKEND_URL || `http://localhost:4000`;
 
 function UserProfile() {
   const [userPosts, setUserPosts] = useState();
@@ -11,7 +11,7 @@ function UserProfile() {
 
   useEffect(() => {
     axios
-      .get(`https://glacial-woodland-33490.herokuapp.com/post/user/${userID}`)
+      .get(`https://glacial-woodland-33490.herokuapp.com/user/${userID}`)
       .then(function (response) {
         setUserPosts(response.data);
       })

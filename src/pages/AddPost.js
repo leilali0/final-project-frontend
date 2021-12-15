@@ -3,7 +3,7 @@ import AddPostForm from "../components/AddPostForm";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const baseUrl = process.env.REACT_APP_BACKEND_URL || `http://localhost:4000`;
+//const baseUrl = process.env.REACT_APP_BACKEND_URL || `http://localhost:4000`;
 
 function AddPost({ userInformation }) {
   const navigate = useNavigate();
