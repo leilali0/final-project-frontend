@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import SinglePostCard from "../components/SinglePostCard";
 
-//const url = process.env.REACT_APP_BACKEND_URL || `http://localhost:4000`;
+const url = process.env.REACT_APP_BACKEND_URL || `http://localhost:4000`;
 
 function Post() {
   const [singlePost, setSinglePost] = useState({});
@@ -11,7 +11,7 @@ function Post() {
 
   useEffect(() => {
     axios
-      .get(`https://glacial-woodland-33490.herokuapp.com/post/${id}`)
+      .get(`${url}/post/${id}`)
       .then(function (response) {
         setSinglePost(response.data);
       })
